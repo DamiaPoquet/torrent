@@ -18,7 +18,7 @@ func (cl *Client) requester() {
 			cl.doRequests()
 			return cl.updateRequests.Signaled()
 		}()
-		minWait := time.After(100 * time.Millisecond)
+		minWait := time.After(1000 * time.Millisecond)
 		maxWait := time.After(1000 * time.Millisecond)
 		select {
 		case <-cl.closed.Done():
